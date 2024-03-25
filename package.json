@@ -9,7 +9,7 @@
     "build:dev": "webpack  --env mode=development",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
-    "test:ui:ci": "concurrently --kill-others --raw --success first \"npm run storybook:build\" \"npm run test:ui\" \"deelay\"",
+    "test:ui:ci": "concurrently --kill-others \"npm run storybook:build\" \"npm run test:ui\" \"deelay\"",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
