@@ -9,7 +9,7 @@
     "build:dev": "webpack  --env mode=development",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
-    "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:ci": "concurrently --kill-others --raw --success first \"npm run storybook:build\" \"npm run test:ui\" \"deelay\"",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
@@ -46,7 +46,9 @@
     "@typescript-eslint/parser": "^5.12.1",
     "babel-loader": "^8.2.3",
     "babel-plugin-i18next-extract": "^0.8.3",
+    "concurrently": "^8.2.2",
     "css-loader": "^6.6.0",
+    "deelay": "^2.0.0",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.25.4",
@@ -98,9 +100,5 @@
         "preset": "iPhone 7"
       }
     }
-  },
-  "overrides": {
-    "chrome-remote-interface": "0.31.3"
   }
-
 }
