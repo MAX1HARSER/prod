@@ -8,6 +8,9 @@
   "Главная": "Main",
   "Короткий язык": "En",
   "Войти": "Sign in",
+  "Выйти": "Logout",
   "Введите логин": "Enter login",
-  "Введите пароль": "Enter password"
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Authorization form",
+  "Введен неправильный логин или пароль": "Incorrect login or password entered"
 }
