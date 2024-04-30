@@ -27,7 +27,6 @@ const Navbar = function ({ className }: NavbarProps) {
 
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
-        setIsAuthModal(false); // нет анимации
     }, [dispatch]);
 
     if (authData) {
@@ -53,10 +52,13 @@ const Navbar = function ({ className }: NavbarProps) {
             >
                 {t('Войти')}
             </Button>
-            <LoginModal
-                isOpen={isAuthModal}
-                onClose={onCloseModal}
-            />
+
+            {isAuthModal && (
+                <LoginModal
+                    isOpen={isAuthModal}
+                    onClose={onCloseModal}
+                />
+            )}
         </div>
     );
 };
